@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawing Program</title>
+    <style>
+        canvas {
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+        let canvas = document.querySelector('#canvas');
+        let context = canvas.getContext('2d');
+
+        canvas.addEventListener('click', function(event) {
+            // getting the x and y coordinates of where the mouse was clicked in the canvas
+            let x = event.offsetX;
+            let y = event.offsetY;
+
+            context.fillRect(x-15, y-15, 30, 30);
+        })
+    </script>
+</body>
+</html>
